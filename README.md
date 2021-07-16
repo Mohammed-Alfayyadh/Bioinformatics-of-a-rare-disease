@@ -1,2 +1,2 @@
-# Bioinformatics of a rare disease
+# Heamiplegic migraine
 A project to explore the genetic basis of hemiplegic migraine 
