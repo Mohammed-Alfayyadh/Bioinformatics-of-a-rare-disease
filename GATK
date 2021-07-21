@@ -1,0 +1,2 @@
+#way to install gatk3.8
+Conda install gatk then download the gatk3.8 jar file. Then in the command line type  gatk-register path/to/the/jar-file
