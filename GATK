@@ -1,9 +1,18 @@
-#way to install gatk4 with all the useful tools to call variants but also to manipulate vcf files.
-The code:
+# sublime text installation in linux
 
-Conda install -c bioconda gatk4,vcftools,samtools,bedtools,bcftools,bwa,picard,fastqc,igv,nextflow
+#apt
+#The apt repository contains packages for both x86-64 and arm64.
 
-Nextflow is useful if you wanna use sarek pipeline.
+#Install the GPG key:
 
-You can put all the above tools in a separate conda environment via conda create --name myenv then conda install the above tools.
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+#Ensure apt is set up to work with https sources:
+
+sudo apt-get install apt-transport-https
+
+#Select the channel to use:
+
+#Stable
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
