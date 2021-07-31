@@ -1,2 +1,9 @@
-#way to install gatk3.8
-Conda install gatk then download the gatk3.8 jar file. Then in the command line type  gatk-register path/to/the/jar-file
+#way to install gatk4 with all the useful tools to call variants but also to manipulate vcf files.
+The code:
+
+Conda install -c bioconda gatk4,vcftools,samtools,bedtools,bcftools,bwa,picard,fastqc,igv,nextflow
+
+Nextflow is useful if you wanna use sarek pipeline.
+
+You can put all the above tools in a separate conda environment via conda create --name myenv then conda install the above tools.
+
