@@ -1,9 +1,12 @@
-#way to install gatk4 with all the useful tools to call variants but also to manipulate vcf files.
-The code:
+# install jupyterlab in linux
 
-Conda install -c bioconda gatk4,vcftools,samtools,bedtools,bcftools,bwa,picard,fastqc,igv,nextflow
+https://jupyter.org/install
 
-Nextflow is useful if you wanna use sarek pipeline.
+# remember that the conda base env has to be activated 
 
-You can put all the above tools in a separate conda environment via conda create --name myenv then conda install the above tools.
+conda install -c conda-forge jupyterlab
+
+#then the command from the command line
+
+jupyter-lab
 
