@@ -1,0 +1,12 @@
+# In order to complete the process of filtering my variants I had to merge my VCF files. Because I had to use Sarek pipeline, 
+which has two annotation tools embedded in it (VEP and snpEff), I also had to use ANNOVAR annotatation tool. Therefore, each sample now has three VCF files.
+
+# Merge VCF files.
+http://samtools.github.io/bcftools/howtos/annotate.html 
+
+#Merging snpEff with ANNOVAR
+bcftools annotate -a snpEff_sample07.vcf.gz -c INFO,^FORMAT/GT ann_sample07.vcf.gz > mergedannot.vcf
+
+# Normally VEP is different, as it produces different numbere of variants. Therefore, the VCF file with the high number of variants has to be the second
+
+bcftools annotate -a sample11_VEP.ann.vcf.gz -c INFO,^FORMAT/GT sample11_snpEff.ann.vcf.gz > mergedannot.vcf
