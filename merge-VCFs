@@ -10,3 +10,7 @@ bcftools annotate -a snpEff_sample07.vcf.gz -c INFO,^FORMAT/GT ann_sample07.vcf.
 # Normally VEP is different, as it produces different numbere of variants. Therefore, the VCF file with the high number of variants has to be the second
 
 bcftools annotate -a sample11_VEP.ann.vcf.gz -c INFO,^FORMAT/GT sample11_snpEff.ann.vcf.gz > mergedannot.vcf
+
+# Now I am merging all the individual files into one VCF file that has all the samples and all the required annotations.
+
+bcftools merge --merge all file1.vcf file2.vcf -O v > final.vcf
