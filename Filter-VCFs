@@ -1,3 +1,7 @@
 # My VCF file might have false positive variants
 # We often want to seprate SNPs from INDELS, we most of the time are interested in SNPs and because there is a lot of uncertainty associated with indels
 in downstream analysis
+# depending on my work, most of the time I need to seprate SNPs from INDELS
+gatk SelectVariants -V input.vcf -select-type SNP -O output.vcf
+gatk SelectVariants -V input.vcf -select-type INDEL -O output.vcf
+
