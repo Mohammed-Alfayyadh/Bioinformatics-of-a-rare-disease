@@ -14,3 +14,12 @@ bcftools annotate -a sample11_VEP.ann.vcf.gz -c INFO,^FORMAT/GT sample11_snpEff.
 # Now I am merging all the individual files into one VCF file that has all the samples and all the required annotations.
 
 bcftools merge --merge all file1.vcf file2.vcf -O v > final.vcf
+
+# Another way to merge my vcf files.
+# First we index all of them
+bcftools index file1.vcf.gz
+bcftools index file2.vcf.gz 
+bcftools index file......
+
+# merge all of the indexed files
+bcftools merge -Oz file1.vcv.gz file2.vcf.gz file..... > all-files.vcf.gz
