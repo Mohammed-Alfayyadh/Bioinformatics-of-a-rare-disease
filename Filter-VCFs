@@ -5,3 +5,5 @@ in downstream analysis
 gatk SelectVariants -V input.vcf -select-type SNP -O output.vcf
 gatk SelectVariants -V input.vcf -select-type INDEL -O output.vcf
 
+# view variants with candidate genes
+Example: bcftools view -i 'Gene.refGene = "FAT2"' sample01_snps.vcf > filtered.vcf
