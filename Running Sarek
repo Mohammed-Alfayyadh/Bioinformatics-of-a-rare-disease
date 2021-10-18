@@ -1,0 +1,38 @@
+The idea is simple, after testing that your pipeline is working fine  nextflow run nf-core/sarek -profile test,singularity , 
+you create three files i.e. ( sample.tsv , nextflow.config , launch.pbs). You can change the names of these three however you want but keep the extensions.
+You put the three files in a run folder from which then you use the qsub command to run your *.pbs script  i.e.  qsub launch.pbsThe codes I used for the three 
+scripts:
+The *.pbs script
+
+#!/bin/bash -l
+#PBS -N NF-run1
+#PBS -l walltime=168:00:00
+#PBS -l select=1:ncpus=1:mem=5gb
+#PBS -m abe
+#PBS -M n9261834@qut.edu.aucd 
+$PBS_O_WORKDIR
+NXF_OPTS='-Xms1g -Xmx4g'
+module load java
+nextflow run nf-core/sarek -profile singularity
+
+You just have to remove my email and put your email instead, only if you want to get notifications about the start and finish of the submitted jobs. 
+The *.config script
+
+params {  
+  input = 'sample.tsv'  
+  genome = 'GRCh38'  
+  tools = 'HaplotypeCaller,mpileup,snpEFF,VEP,CNVkit'
+  }
+  tower {  
+  accessToken = 'your tower token'  
+  endpoint = 'https://nftower.qut.edu.au/api'  
+  enabled = true
+  }
+  
+  For this you have to put in your tower token. Also, after many failed experiments the above tools should work together. The tools snpEFF and VEP 
+  are annotation tools, while CNVkit is a CNVs caller. I am not sure why out of all my failed experiments this one worked, maybe it is the order of the tools 
+  or the capitalization of the letters or something else I dont know. But if for some reason your job fails, just add -resume  after singularity in your last 
+  line in the .pbs script  i.e nextflow run nf-core/sarek -profile singularity -resume and re launch your  pbs script (without deleting or changing 
+  anything inside your run folder).
+
+The *.tsv fileThis is just a file that has tab separated values in it.
