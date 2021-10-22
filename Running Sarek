@@ -9,8 +9,8 @@ The *.pbs script
 #PBS -l walltime=168:00:00
 #PBS -l select=1:ncpus=1:mem=5gb
 #PBS -m abe
-#PBS -M n9261834@qut.edu.aucd 
-$PBS_O_WORKDIR
+#PBS -M n9261834@qut.edu.au
+cd $PBS_O_WORKDIR
 NXF_OPTS='-Xms1g -Xmx4g'
 module load java
 nextflow run nf-core/sarek -profile singularity
@@ -35,4 +35,5 @@ params { 
   line in the .pbs script  i.e nextflow run nf-core/sarek -profile singularity -resume and re launch your  pbs script (without deleting or changing 
   anything inside your run folder).
 
-The *.tsv fileThis is just a file that has tab separated values in it.
+The *.tsv file
+This is just a file that has tab separated values in it.
