@@ -13,3 +13,4 @@ Example: bcftools view -i 'Gene.refGene = "FAT2"' sample01_snps.vcf > filtered.v
 
 example"
 gatk VariantsToTable -V HaplotypeCaller_sample01_all_annotation.vcf.gz -F CHROM -F POS -F TYPE -F Gene.refGene -F CADD_phred --show-filtered -O output.vcf
+https://gatk.broadinstitute.org/hc/en-us/articles/360037592211-VariantsToTable 
