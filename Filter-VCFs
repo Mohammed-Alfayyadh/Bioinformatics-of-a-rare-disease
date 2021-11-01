@@ -14,3 +14,13 @@ Example: bcftools view -i 'Gene.refGene = "FAT2"' sample01_snps.vcf > filtered.v
 example"
 gatk VariantsToTable -V HaplotypeCaller_sample01_all_annotation.vcf.gz -F CHROM -F POS -F TYPE -F Gene.refGene -F CADD_phred --show-filtered -O output.vcf
 https://gatk.broadinstitute.org/hc/en-us/articles/360037592211-VariantsToTable 
+
+For all the INFO annotation in my case:
+gatk VariantsToTable -V HaplotypeCaller_sample01_all_annotation.vcf.gz -F AC -F AF -F AN -F BaseQRankSum -F DB -F DP -F END -F ExcessHet -F FS/ 
+-F InbreedingCoeff -F MLEAC -F MLEAF -F MQ -F MQRankSum -F QD -F RAW_MQandDP -F ReadPosRankSum -F SOR -F ANN -F LOF -F NMD -F Func.refGene -F Gene.refGene/ 
+-F GeneDetail.refGene -F ExonicFunc.refGene -F AAChange.refGene -F Xref.refGene -F cytoBand -F ExAC_ALL -F ExAC_AFR -F ExAC_AMR -F ExAC_EAS -F ExAC_FIN/
+-F ExAC_NFE -F ExAC_OTH -F ExAC_SAS -F avsnp147 -F SIFT_score -F SIFT_pred -F Polyphen2_HDIV_score -F Polyphen2_HDIV_pred -F Polyphen2_HVAR_score/
+-F Polyphen2_HVAR_pred -F LRT_score -F LRT_pred -F MutationTaster_score -F MutationTaster_pred -F FATHMM_score -F FATHMM_pred -F PROVEAN_score -F PROVEAN_pred/ 
+-F VEST3_score -F CADD_raw -F CADD_phred -F DANN_score -F fathmm-MKL_coding_score -F fathmm-MKL_coding_pred -F MetaSVM_score -F MetaSVM_pred -F MetaLR_score/ 
+-F MetaLR_pred -F integrated_fitCons_score -F integrated_confidence_value -F GERP++_RS -F phyloP7way_vertebrate -F phyloP20way_mammalian -F phastCons7way_vertebrate/ 
+-F phastCons20way_mammalian -F SiPhy_29way_logOdds -F ALLELE_END --show-filtered -O output.csv
