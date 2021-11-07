@@ -24,3 +24,6 @@ gatk VariantsToTable -V HaplotypeCaller_sample01_all_annotation.vcf.gz -F AC -F 
 -F VEST3_score -F CADD_raw -F CADD_phred -F DANN_score -F fathmm-MKL_coding_score -F fathmm-MKL_coding_pred -F MetaSVM_score -F MetaSVM_pred -F MetaLR_score/ 
 -F MetaLR_pred -F integrated_fitCons_score -F integrated_confidence_value -F GERP++_RS -F phyloP7way_vertebrate -F phyloP20way_mammalian -F phastCons7way_vertebrate/ 
 -F phastCons20way_mammalian -F SiPhy_29way_logOdds -F ALLELE_END --show-filtered -O output.csv
+
+# To add MAF to the INFO field in my files:
+bcftools +fill-tags input.vcf > output.vcf
