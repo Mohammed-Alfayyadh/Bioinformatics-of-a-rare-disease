@@ -27,3 +27,4 @@ gatk VariantsToTable -V HaplotypeCaller_sample01_all_annotation.vcf.gz -F AC -F 
 
 # To add MAF to the INFO field in my files:
 bcftools +fill-tags input.vcf > output.vcf
+https://www.biostars.org/p/180894/#313567
