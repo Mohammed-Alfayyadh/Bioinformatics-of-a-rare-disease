@@ -1,0 +1,12 @@
+# Building the right conda environment for bioinformatics
+#Tools required
+1- gatk4
+2- bwa
+3- samtools
+4- bcftools
+5- vcftools
+6- bedtools
+7- picard
+8- fastqc
+9- igv
+10- 
